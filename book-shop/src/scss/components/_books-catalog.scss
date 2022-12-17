@@ -1,0 +1,18 @@
+@import "../abstracts/font-styles";
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mine__title {
+    text-align: center;
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
