@@ -1,4 +1,4 @@
-header {
+.header {
     max-width: 1200px;
     margin: 0 auto;
     .header-wrapper {
@@ -12,30 +12,20 @@ header {
         width: 150px;
         height: 100px;
         background-image: url(../assets/svg/logo.svg);
-        .logo__link {
-            display: block;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
+        cursor: pointer;
     }
-    .cart {
+    .cart-button {
         position: relative;
         width: 50px;
         height: 50px;
         background-image: url(../assets/svg/cart.svg);
         background-repeat: no-repeat;
-        .cart__link {
-            display: block;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
+        cursor: pointer;
     }
-    .counter {
+    .cart__counter {
         position: relative;
-        left: 38px;
-        bottom: 62px;
+        left: 36px;
+        bottom: 11px;
         display: flex;
         align-items: center;
         justify-content: center;

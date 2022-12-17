@@ -1,4 +1,19 @@
+@import "../scss/base/normalize";
+@import "abstracts/color-styles";
 @import "../scss/components/header";
-@import "../scss/components/books-catalog";
 @import "../scss/components/book";
+@import "../scss/components/books-catalog";
+@import "../scss/components/button";
+@import "../scss/components/cart";
+@import "../scss/components/counter";
 @import "../scss/components/pop-up";
+@import "../scss/components/form";
+@import "../scss/components/order";
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.none {
+    display: none;
+}

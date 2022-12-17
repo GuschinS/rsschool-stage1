@@ -30,6 +30,10 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html",
     }),
+    new HtmlWebPackPlugin({
+      template: "./src/order.html",
+      filename: "./order.html",
+    }),
   ],
   module: {
     rules: [
@@ -69,7 +73,7 @@ module.exports = {
         type: "asset/resource",
       },
       {
-        test: /\.(m?js)$/,
+        test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -80,4 +84,11 @@ module.exports = {
       },
     ],
   },
+  // devServer: {
+  //   static: {
+  //     directory: path.join(__dirname, "public"),
+  //   },
+  //   compress: true,
+  //   port: 9000,
+  // },
 };

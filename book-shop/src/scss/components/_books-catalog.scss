@@ -1,17 +1,22 @@
-@import "../abstracts/font-styles";
+// @import "../abstracts/font-styles";
 
 main {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.mine__title {
+.main__title {
     text-align: center;
 }
 
-.container {
+.catalog-container {
     width: 95%;
     margin: 0 auto;
+    padding-top: 50px;
+}
+
+.cards__list {
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

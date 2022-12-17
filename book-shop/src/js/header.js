@@ -1,34 +1,29 @@
-const body = document.querySelector("body");
+import { newTag } from "./create-element";
 
-const buildHeader = () => {
-  const header = document.createElement("header");
-  const headerWrapper = document.createElement("div");
-  const logo = document.createElement("div");
-  const counter = document.createElement("div");
-  const cart = document.createElement("div");
-
-  headerWrapper.classList.add("header-wrapper");
-  logo.classList.add("logo");
-  cart.classList.add("cart");
-
-  const logoLink = document.createElement("a");
-  const cartLink = document.createElement("a");
-  logoLink.classList.add("logo__link");
-  cartLink.classList.add("cart__link");
-  logo.append(logoLink);
-  cart.append(cartLink);
-  counter.classList.add("counter");
-  let count = 0;
-  if (localStorage.getItem("count")) {
-    count = localStorage.getItem("count");
+class Header {
+  constructor() {
+    this.header = newTag("header", { className: "header" });
+    this.headerWrapper = newTag("div", {
+      className: "header-wrapper",
+    });
+    this.logo = newTag("div", {
+      className: "logo",
+    });
+    this.cartButton = newTag("div", {
+      className: "cart-button",
+    });
+    this.cartCounter = newTag("div", {
+      className: "cart__counter",
+      textContent: 0,
+    });
   }
-  counter.textContent = count;
-  cart.append(counter);
-  headerWrapper.append(logo, cart);
-  header.append(headerWrapper);
-  body.append(header);
-};
+  render() {
+    this.header.append(this.headerWrapper);
+    this.headerWrapper.append(this.logo, this.cartButton);
+    this.cartButton.append(this.cartCounter);
 
-buildHeader();
+    return this.header;
+  }
+}
 
-// export { header };
+export { Header };

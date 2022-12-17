@@ -1,0 +1,23 @@
+.btn-link,
+.btn {
+    padding: 0.5em 2em;
+    text-transform: uppercase;
+    transition: 0.3s;
+    background-color: $color-primary-light;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+    &:hover {
+        background-color: $color-primary;
+        color: $color-primary-light;
+        border: 1px solid $color-primary-light;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+}
+.btn-remove {
+    padding: 1em;
+    &:hover img {
+        filter: invert(18%) sepia(84%) saturate(5971%) hue-rotate(356deg) brightness(103%) contrast(120%);
+        cursor: pointer;
+    }
+}
