@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "target": "ES5",
+        "module": "commonjs",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "strict": false,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "outDir": "./lib",
+        "lib": ["dom"]
+    },
+    "include": ["./src"]
+}
