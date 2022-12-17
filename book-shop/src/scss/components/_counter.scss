@@ -1,0 +1,38 @@
+.details-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em 0;
+    font-size: large;
+}
+
+.counter-wrapper {
+    display: flex;
+    color: $color-primary;
+    text-align: center;
+    :nth-child(1),
+    :nth-child(3) {
+        width: 24px;
+        height: 24px;
+        border: 1px solid $color-primary;
+        background-color: $color-primary-light;
+        border-radius: 30px;
+        padding: 0.5em;
+        transition: 0.3s;
+        &:hover {
+            background-color: $color-primary;
+            color: $color-primary-light;
+            border: 1px solid $color-primary-light;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+    }
+}
+.items__control {
+    &.count {
+        background-color: $color-primary-light;
+        border: 1px solid $color-primary;
+        margin: 0 1em;
+        padding: 0.5em 2em;
+    }
+}
