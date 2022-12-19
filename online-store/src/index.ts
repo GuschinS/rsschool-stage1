@@ -1,5 +1,12 @@
-import App from './components/app/app';
+// import App from './components/app/app';
 import './global.css';
+import './components/header';
+import './components/main';
+import './components/render';
 
-const app = new App();
-app.start();
+import './components/product-catalog';
+import './components/catalog-card';
+import './components/loader';
+
+// const app = new App();
+// app.start();
