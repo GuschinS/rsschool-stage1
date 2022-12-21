@@ -13,6 +13,18 @@ header h1 {
     font-weight: 800;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: 22% 75%;
+    grid-column-gap: 3%;
+}
+
+.filters-section{
+    padding-left: 12px;
+}
+
+
+
 .cards__list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
