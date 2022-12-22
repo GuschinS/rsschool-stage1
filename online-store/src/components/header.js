@@ -10,19 +10,18 @@ class Header {
             className: 'logo',
             textContent: 'Online Store',
         });
-        // this.cartButton = newTag("div", {
-        //   className: "cart-button",
-        // });
-        // this.cartCounter = newTag("div", {
-        //   className: "cart__counter",
-        //   textContent: 0,
-        // });
+        this.cartButton = newTag('div', {
+            className: 'cart-button',
+        });
+        this.cartCounter = newTag('div', {
+            className: 'cart__counter',
+            textContent: 0,
+        });
     }
     render() {
         this.header.append(this.headerWrapper);
-        this.headerWrapper.append(this.logo);
-        // this.headerWrapper.append(this.logo, this.cartButton);
-        // this.cartButton.append(this.cartCounter);
+        this.headerWrapper.append(this.logo, this.cartButton);
+        this.cartButton.append(this.cartCounter);
 
         return this.header;
     }

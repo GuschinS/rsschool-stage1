@@ -1,7 +1,7 @@
 // import { newTag } from './create-element';
 import { Main } from './main';
 import { Header } from './header';
-// import { Overlay } from "./overlay";
+import { Overlay } from './overlay';
 // import { CartCard } from "./cart-card";
 // import { toggleBinStatus } from "./bin-status";
 
@@ -10,6 +10,7 @@ const app = document.querySelector('body');
 if (app) {
     app.append(new Header().render());
     app.append(new Main().render());
+    app.append(new Overlay().render());
 }
 // document.body.append(app);
 // const cartContainer = document.querySelector('.cart-container');
