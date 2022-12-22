@@ -1,0 +1,50 @@
+@import "../abstracts/color-styles";
+
+.pop-up-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.8);
+    &.open {
+        display: block;
+    }
+    .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        width: 70%;
+        height: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: solid 2px transparent;
+        background: $color-primary-light;
+        border-radius: 5px;
+        .modal-text-container {
+            width: 55%;
+        }
+    }
+    .pop-up-close-button {
+        display: block;
+        position: absolute;
+        right: 3%;
+        top: 25px;
+        width: 15px;
+        height: 15px;
+        background-image: url(../assets/svg/x-icon.svg);
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        transition: all 0.5s;
+        &:hover {
+            transform: scale(1.2);
+            transition: all 0.3s;
+        }
+    }
+}

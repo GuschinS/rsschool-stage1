@@ -1,0 +1,15 @@
+import "./scss/main.scss";
+import "./js/create-element";
+import "./js/render";
+import "./js/book-catalog";
+import "./js/catalog-card";
+import "./js/button-delete";
+import "./js/bin-status";
+import "./js/total-price";
+import "./js/header";
+import "./js/modal";
+import "./js/overlay";
+import "./js/main";
+import "./js/order-form";
+import "./js/order.js";
+import "./js/loader";

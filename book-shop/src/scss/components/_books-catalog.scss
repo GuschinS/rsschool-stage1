@@ -1,0 +1,23 @@
+// @import "../abstracts/font-styles";
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main__title {
+    text-align: center;
+}
+
+.catalog-container {
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.cards__list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
