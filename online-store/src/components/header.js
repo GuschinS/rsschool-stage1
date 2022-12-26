@@ -10,6 +10,10 @@ class Header {
             className: 'logo',
             textContent: 'Online Store',
         });
+        this.cartTotal = newTag('div', {
+            className: 'cart-total',
+            textContent: 'Cart total: 0$'
+        })
         this.cartButton = newTag('div', {
             className: 'cart-button',
         });
@@ -20,7 +24,7 @@ class Header {
     }
     render() {
         this.header.append(this.headerWrapper);
-        this.headerWrapper.append(this.logo, this.cartButton);
+        this.headerWrapper.append(this.logo, this.cartTotal, this.cartButton);
         this.cartButton.append(this.cartCounter);
 
         return this.header;
