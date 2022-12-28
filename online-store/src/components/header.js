@@ -12,8 +12,8 @@ class Header {
         });
         this.cartTotal = newTag('div', {
             className: 'cart-total',
-            textContent: 'Cart total: 0$'
-        })
+            textContent: 'Cart total: 0$',
+        });
         this.cartButton = newTag('div', {
             className: 'cart-button',
         });
@@ -21,6 +21,7 @@ class Header {
             className: 'cart__counter',
             textContent: 0,
         });
+        this.listenEvents();
     }
     render() {
         this.header.append(this.headerWrapper);
@@ -28,6 +29,20 @@ class Header {
         this.cartButton.append(this.cartCounter);
 
         return this.header;
+    }
+    listenEvents() {
+        this.cartButton.addEventListener('click', () => {
+            const cartSection = document.querySelector('.cart__section');
+            const container = document.querySelector('.container');
+            cartSection.classList.add('open');
+            container.classList.remove('open');
+        });
+        this.logo.addEventListener('click', () => {
+            const cartSection = document.querySelector('.cart__section');
+            const container = document.querySelector('.container');
+            cartSection.classList.remove('open');
+            container.classList.add('open');
+        });
     }
 }
 

@@ -6,7 +6,7 @@ import { Cart } from './cart';
 class Main {
     constructor() {
         this.main = newTag('main');
-        this.container = newTag('div', { className: 'container' });
+        this.container = newTag('div', { className: 'container open' });
     }
     render() {
         this.main.append(new Cart().renderCart());
