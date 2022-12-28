@@ -1,5 +1,6 @@
 import { newTag } from './create-element';
 import { Modal } from './modal';
+import { Cart } from './cart';
 
 class CatalogCard {
     constructor({ title, images, price, description }, index) {
@@ -62,6 +63,9 @@ class CatalogCard {
             console.log('text');
             // this.addToBin(event);
             // this.setToLocalStorage();
+            new Cart().addsToCart(event.path[3].attributes[1].nodeValue);//index of card
+            console.log(event);
+            
         });
     }
     openModal(title, description, thumbnail) {
