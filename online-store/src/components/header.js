@@ -34,12 +34,16 @@ class Header {
         this.cartButton.addEventListener('click', () => {
             const cartSection = document.querySelector('.cart__section');
             const container = document.querySelector('.container');
+            const orderForm = document.querySelector('.form__section');
+            orderForm.classList.remove('open');
             cartSection.classList.add('open');
             container.classList.remove('open');
         });
         this.logo.addEventListener('click', () => {
             const cartSection = document.querySelector('.cart__section');
             const container = document.querySelector('.container');
+            const orderForm = document.querySelector('.form__section');
+            orderForm.classList.remove('open');
             cartSection.classList.remove('open');
             container.classList.add('open');
         });
