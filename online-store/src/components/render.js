@@ -1,17 +1,28 @@
 // import { newTag } from './create-element';
 import { Main } from './main';
+
 import { Header } from './header';
 import { Overlay } from './overlay';
 // import { CartCard } from "./cart-card";
 // import { toggleBinStatus } from "./bin-status";
 
 // const app = newTag('div', { className: 'app' });
-const app = document.querySelector('body');
-if (app) {
-    app.append(new Header().render());
-    app.append(new Main().render());
-    app.append(new Overlay().render());
+
+renderingApp();
+function renderingApp() {
+    const app = document.querySelector('body');
+    if (app) {
+        app.append(new Header().render());
+        app.append(new Main().render());
+        app.append(new Overlay().render());
+    }
 }
+// function renderingMain() {
+//     const app = document.querySelector('body');
+
+//     app.append(new Main().render());
+// }
+
 // document.body.append(app);
 // const cartContainer = document.querySelector('.cart-container');
 // const catalogContainer = document.querySelector('.catalog-container');
@@ -54,3 +65,5 @@ if (app) {
 //         toggleBinStatus();
 //     });
 // }
+
+// export { renderingMain };
