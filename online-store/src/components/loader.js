@@ -1,19 +1,20 @@
-import json from '../data.json';
+// import json from '../data.json';
 import { CatalogCard } from './catalog-card';
 import { CategoriesBrands } from './category-brand-filters';
+import { selectCategoryArray } from './select-filter';
 
 async function getCards() {
     try {
-        renderProducts(json);
+        renderProducts(selectCategoryArray);
     } catch (error) {
         console.log(error);
     }
 }
-const app = document.querySelector('body');
+// const app = document.querySelector('body');
 
-if (app) {
-    getCards();
-}
+// if (app) {
+getCards();
+// }
 
 function renderProducts(array) {
     let fragment = new DocumentFragment();
@@ -42,3 +43,4 @@ function renderProducts(array) {
     cardsList.append(fragment);
     return cardsList;
 }
+// export {selectCategoryArray};

@@ -1,5 +1,4 @@
 import json from '../data.json';
-
 let selectCategoryArray = json;
 
 function selectCategory() {
@@ -19,4 +18,4 @@ function selectCategory() {
     console.log('selectCategoryArray.length: ', selectCategoryArray.length);
 }
 
-export { selectCategory };
+export { selectCategory, selectCategoryArray };
