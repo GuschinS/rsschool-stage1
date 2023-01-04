@@ -1,0 +1,54 @@
+*:focus {
+    outline: none;
+}
+
+.form__section {
+    display: none;
+    width: 50%;
+    padding-top: 50px;
+    margin: 0 auto;
+    &.open {
+        display: block;
+    }
+    .order-form {
+        appearance: none;
+        display: flex;
+        flex-direction: column;
+    }
+    .label {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5em;
+    }
+    .input {
+        padding: 0.5em;
+        color: #4646464b;
+        font-weight: 300;
+        border: 1px solid #4646464b;
+        margin-top: 0.5em;
+        &:focus:invalid {
+            border: 1px solid red;
+            color: red;
+        }
+        &:focus:valid {
+            border: 1px solid green;
+            color: green;
+        }
+    }
+    fieldset {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        width: 40%;
+    }
+    .cash-container,
+    .card-container {
+        padding: 0.5em;
+    }
+    .cash-label,
+    .card-label {
+        margin-left: 0.5em;
+    }
+    .input-button {
+        margin: 0.5em;
+    }
+}
