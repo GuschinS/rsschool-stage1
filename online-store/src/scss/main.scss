@@ -2,6 +2,8 @@
 @import "../scss/components/filter-section";
 @import "../scss/components/product-section";
 @import "../scss/components/pop-up";
+@import "../scss/components/cart";
+@import "../scss/components/form";
 
 body {
     color: #fff;
@@ -9,8 +11,12 @@ body {
     font-family: sans-serif;
 }
 
-.container {
+.container.open {
     display: grid;
     grid-template-columns: 22% 75%;
     grid-column-gap: 3%;
+}
+
+.container {
+    display: none;
 }
