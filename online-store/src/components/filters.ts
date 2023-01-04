@@ -1,7 +1,46 @@
 import { newTag } from './create-element';
 import { selectCategory } from './select-filter';
 
+interface SourcesFilters {
+    className?: string;
+    innerText?: string;
+    id?: string | number;
+    textContent?: string | number;
+    type?: string;
+    size?: string;
+    src?: string;
+    action?: string;
+    innerHTML?: string;
+    pattern?: string;
+    required?: boolean;
+    min?: string;
+    name?: string;
+    for?: string;
+    checked?: boolean;
+    width?: number;
+    alt?: string;
+}
 class Filters {
+    filtersContainer;
+    resetFilters;
+    resetButton;
+    saveButton;
+    filtersCategory;
+    filtersCategoryName;
+    filtersCategoryList;
+    filtersBrand;
+    filtersBrandName;
+    filtersBrandList;
+    filtersPrice;
+    filtersPriceName;
+    filtersPriceData;
+    filtersPriceFrom;
+    filtersPriceTo;
+    filtersStock;
+    filtersStockName;
+    filtersStockData;
+    filtersStockFrom;
+    filtersStockTo: HTMLElement & SourcesFilters;
     constructor() {
         this.filtersContainer = newTag('section', {
             className: 'filters-section',
@@ -65,7 +104,8 @@ class Filters {
 
     listenEvents() {
         this.filtersCategory.addEventListener('click', (event) => {
-            event.target.classList.toggle('select');
+            const target = event.target as HTMLElement;
+            target.classList.toggle('select');
             selectCategory();
 
             // this.setToLocalStorage();

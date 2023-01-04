@@ -1,7 +1,50 @@
 import { newTag } from './create-element';
 import json from '../data.json';
 
+interface SourcesCart {
+    className?: string;
+    innerText?: string | Node;
+    id?: string | number;
+    textContent?: string | number;
+    type?: string;
+    size?: string;
+    src?: string;
+    action?: string;
+    innerHTML?: string;
+    pattern?: string;
+    required?: boolean;
+    min?: string;
+    name?: string;
+    for?: string;
+    checked?: boolean;
+    width?: number;
+    alt?: string;
+}
+
 class Cart {
+    cartContainer;
+    productsCart;
+    productsPage;
+    productsList;
+    productItem;
+    productImg;
+    productInfo;
+    productName;
+    productRating;
+    productDiscount;
+    productBuyInfo;
+    productStock;
+    productAdd;
+    productCount;
+    productTakeAway;
+    productPrice;
+    summaryContainer;
+    summaryTitle;
+    summaryProducts;
+    summaryTotalPrice;
+    summaryPromoCode;
+    summaryBuy;
+    orderButton: HTMLElement & SourcesCart;
     constructor() {
         this.cartContainer = newTag('section', { className: 'cart__section' });
         this.productsCart = newTag('div', { className: 'products__container' });
@@ -81,15 +124,15 @@ class Cart {
         return this.cartContainer;
     }
 
-    addsToCart(index) {
+    addsToCart(index: number) {
         const product = json[index - 1];
         if (localStorage.getItem(product.title) !== null) {
             const productNames = document.querySelectorAll('.product-name');
             const productCounts = document.querySelectorAll('.product-count');
             const productPrices = document.querySelectorAll('.product-price');
             let prdIndex = 0;
-            for (let i = 0; i < productNames; i++) {
-                if (productNames[i] === product.title) {
+            for (let i = 0; i < productNames.length; i++) {
+                if (productNames[i].toString() === product.title) {
                     prdIndex = i;
                 }
             }
@@ -112,11 +155,11 @@ class Cart {
         this.productName.textContent = product.title;
         this.productRating.textContent = `Rating: ${product.rating}`;
         this.productDiscount.textContent = `Discount: ${product.discountPercentage}`;
-        this.productStock = `Stock: ${product.stock}`;
+        this.productStock.textContent = `Stock: ${product.stock}`;
         this.productCount.textContent = '1';
         this.productPrice.textContent = `$${product.price}`;
 
-        localStorage.setItem(product.title, product.stock);
+        localStorage.setItem(product.title, product.stock.toString());
         const productList = document.querySelector('.products-list');
 
         productList.append(this.productItem);
@@ -137,11 +180,11 @@ class Cart {
         this.summaryUpdate();
     }
 
-    cartHeaderUpdate(price, count) {
+    cartHeaderUpdate(price: number, count: number) {
         const cartTotal = document.querySelector('.cart-total');
         cartTotal.textContent = `Cart total: ${price}$`;
         const cartCounter = document.querySelector('.cart__counter');
-        cartCounter.textContent = count;
+        cartCounter.textContent = count.toString();
     }
 
     summaryUpdate() {
@@ -168,12 +211,12 @@ class Cart {
 
     cartListenEvents() {
         this.productAdd.addEventListener('click', (event) => {
-            this.addingToCart(event.target.id);
-            console.log(event);
+            const target = event.target as HTMLElement;
+            this.addingToCart(target.id);
         });
         this.productTakeAway.addEventListener('click', (event) => {
-            this.takeAwayCart(event.target.id);
-            console.log(event);
+            const target = event.target as HTMLElement;
+            this.takeAwayCart(target.id);
         });
         this.orderButton.addEventListener('click', () => {
             this.cartContainer.classList.remove('open');
@@ -182,7 +225,7 @@ class Cart {
         });
     }
 
-    addingToCart(productName) {
+    addingToCart(productName: string) {
         const count = +this.productCount.textContent;
         const checkLocal = localStorage.getItem(productName);
         if (count === +checkLocal) {
@@ -191,12 +234,12 @@ class Cart {
         }
         const price = +this.productPrice.textContent.replace(/\D/g, '') / count;
         const sumPrice = +this.productPrice.textContent.replace(/\D/g, '');
-        this.productCount.textContent = count + 1;
+        this.productCount.textContent = (count + 1).toString();
         this.productPrice.textContent = `$${price + sumPrice}`;
         this.summaryUpdate();
     }
 
-    takeAwayCart(productName) {
+    takeAwayCart(productName: string) {
         const count = +this.productCount.textContent;
         if (count === 1) {
             this.productItem.remove();
@@ -206,7 +249,7 @@ class Cart {
         }
         const price = +this.productPrice.textContent.replace(/\D/g, '') / count;
         const sumPrice = +this.productPrice.textContent.replace(/\D/g, '');
-        this.productCount.textContent = count - 1;
+        this.productCount.textContent = (count - 1).toString();
         this.productPrice.textContent = `$${sumPrice - price}`;
         this.summaryUpdate();
     }

@@ -1,6 +1,7 @@
 import { newTag } from './create-element';
 
 class Form {
+    [x: string]: any;
     constructor() {
         this.formWrapper = newTag('div', {
             className: 'form__section',

@@ -1,9 +1,42 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 import { newTag } from './create-element';
 import { Modal } from './modal';
 import { Cart } from './cart';
 
+interface SourcesCatalogCard {
+    className?: string;
+    innerText?: string;
+    id?: string | number;
+    textContent?: string | number;
+    type?: string;
+    size?: string;
+    src?: string;
+    action?: string;
+    innerHTML?: string;
+    pattern?: string;
+    required?: boolean;
+    min?: string;
+    name?: string;
+    for?: string;
+    checked?: boolean;
+    width?: number;
+    alt?: string;
+}
 class CatalogCard {
-    constructor({ title, images, price, description }, index) {
+    title: string;
+    thumbnail: string;
+    price: string | Node;
+    description: string;
+    cardContainer;
+    card;
+    cardImg;
+    cardBody;
+    cardTitle;
+    btnOpenModal;
+    priceWrapper;
+    priceText;
+    btnBin: HTMLElement & SourcesCatalogCard;
+    constructor({ title, images, price, description }: any, index: number) {
         this.title = title;
         this.thumbnail = images[1];
         this.price = price;
@@ -59,16 +92,15 @@ class CatalogCard {
         this.btnOpenModal.addEventListener('click', () => {
             this.openModal(this.title, this.description, this.thumbnail);
         });
-        this.btnBin.addEventListener('click', (event) => {
-            console.log('text');
+        this.btnBin.addEventListener('click', (event: any) => {
+            // console.log('text');
             // this.addToBin(event);
             // this.setToLocalStorage();
-            new Cart().addsToCart(event.path[3].attributes[1].nodeValue);//index of card
-            console.log(event);
-            
+
+            new Cart().addsToCart(event.path[3].attributes[1].nodeValue); //index of card
         });
     }
-    openModal(title, description, thumbnail) {
+    openModal(title: string, description: string, thumbnail: string) {
         new Modal(title, description, thumbnail).openModal();
     }
 }
