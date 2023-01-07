@@ -1,0 +1,15 @@
+.cart__section {
+  display: none;
+  &.open {
+    display: block;
+  }
+  .product-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .product-buy-info {
+    display: flex;
+    align-items: center;
+  }
+}

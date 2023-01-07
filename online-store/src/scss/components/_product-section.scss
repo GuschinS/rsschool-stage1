@@ -1,0 +1,19 @@
+.cards__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* grid-template-rows: repeat(5, 1fr); */
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+li {
+  list-style-type: none;
+  border: solid 1px white;
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+}

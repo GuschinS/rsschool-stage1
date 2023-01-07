@@ -1,0 +1,22 @@
+@import "../scss/components/header";
+@import "../scss/components/filter-section";
+@import "../scss/components/product-section";
+@import "../scss/components/pop-up";
+@import "../scss/components/cart";
+@import "../scss/components/form";
+
+body {
+    color: #fff;
+    background: #17181cd5;
+    font-family: sans-serif;
+}
+
+.container.open {
+    display: grid;
+    grid-template-columns: 22% 75%;
+    grid-column-gap: 3%;
+}
+
+.container {
+    display: none;
+}
